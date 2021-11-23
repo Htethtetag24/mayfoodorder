@@ -11,7 +11,7 @@
     <table class="table table-striped table-hover">
       @php
           $shipping_charge=DB::table('shippings')->where('id',$order->shipping_id)->pluck('price');
-      @endphp 
+      @endphp
       <thead>
         <tr>
             <th>S.N.</th>
@@ -48,12 +48,12 @@
             <td>
                 <a href="{{route('order.edit',$order->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
                 <form method="POST" action="{{route('order.destroy',[$order->id])}}">
-                  @csrf 
+                  @csrf
                   @method('delete')
                       <button class="btn btn-danger btn-sm dltBtn" data-id={{$order->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
                 </form>
             </td>
-          
+
         </tr>
       </tbody>
     </table>
@@ -86,24 +86,14 @@
                           $shipping_charge=DB::table('shippings')->where('id',$order->shipping_id)->pluck('price');
                       @endphp
                         <td>Shipping Charge</td>
-                        <td> : $ {{number_format($shipping_charge[0],2)}}</td>
+                        <td> :  {{number_format($shipping_charge[0],2)}} Kayt</td>
                     </tr>
-                    <tr>
-                      <td>Coupon</td>
-                      <td> : $ {{number_format($order->coupon,2)}}</td>
-                    </tr>
+
                     <tr>
                         <td>Total Amount</td>
-                        <td> : $ {{number_format($order->total_amount,2)}}</td>
+                        <td> :  {{number_format($order->total_amount,2)}} Kyat</td>
                     </tr>
-                    <tr>
-                        <td>Payment Method</td>
-                        <td> : @if($order->payment_method=='cod') Cash on Delivery @else Paypal @endif</td>
-                    </tr>
-                    <tr>
-                        <td>Payment Status</td>
-                        <td> : {{$order->payment_status}}</td>
-                    </tr>
+
               </table>
             </div>
           </div>

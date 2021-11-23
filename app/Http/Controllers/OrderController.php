@@ -122,14 +122,7 @@ class OrderController extends Controller
         }
         // return $order_data['total_amount'];
         $order_data['status']="new";
-        if(request('payment_method')=='paypal'){
-            $order_data['payment_method']='paypal';
-            $order_data['payment_status']='paid';
-        }
-        else{
-            $order_data['payment_method']='cod';
-            $order_data['payment_status']='Unpaid';
-        }
+
         $order->fill($order_data);
         $status=$order->save();
         //Mail::to($order)->send(new \App\Mail\OrderConfirm);
