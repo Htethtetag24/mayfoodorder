@@ -62,7 +62,7 @@
 <!--/ End Slider Area -->
 
 <!-- Start Small Banner  -->
-<section class="small-banner section">
+{{-- <section class="small-banner section">
     <div class="container-fluid">
         <div class="row">
             @php
@@ -91,7 +91,7 @@
             @endif
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Small Banner -->
 
 <!-- Start Product Area -->
@@ -407,7 +407,7 @@
                 <div class="single-service">
                     <i class="ti-rocket"></i>
                     <h4>Free shiping</h4>
-                    <p>Orders over $100</p>
+                    <p>Orders over 10000 Kyat</p>
                 </div>
                 <!-- End Single Service -->
             </div>
@@ -443,7 +443,7 @@
 </section>
 <!-- End Shop Services Area -->
 
-@include('frontend.layouts.newsletter')
+{{-- @include('frontend.layouts.newsletter') --}}
 
 <!-- Modal -->
 @if($product_lists)
